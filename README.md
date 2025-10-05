@@ -44,7 +44,7 @@ The structure of the *front-end* consists of:
 ## Environment configuration
 1. Clone the repository
 ``` 
-
+git clone https://github.com/Alezura01/Dynamic-Interface-Generator-with-LangGraph-Angular.git
 cd chatbot-ui 
 ```
 2. Create a virtual environment
