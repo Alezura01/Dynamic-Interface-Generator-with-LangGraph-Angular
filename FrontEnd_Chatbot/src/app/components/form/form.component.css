@@ -1,0 +1,68 @@
+.center-container {
+    background-color: #ffff;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/*Progress bar */
+.progressbar {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    margin: 30px auto;
+    width: 200px;
+}
+
+.progressbar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #e0e0e0;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.progressbar::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: calc((100% / (var(--steps) - 1)) * var(--progress));
+    background-color: #929292;
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.progressbar li {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #e0e0e0;
+    border: 3px solid #929292;
+    border-radius: 50%;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.progressbar li.active {
+    background-color: #929292;
+}
+
+.progressbar li.clickable {
+    cursor:pointer;
+}

@@ -1,0 +1,35 @@
+<body>
+    <fieldset>
+        <div class="fieldset-title">{{fieldsetData.name}}</div>
+    <div class="center-container">
+        <div *ngIf="forms.length > 0" class="content">
+
+            <div *ngFor="let formsItem of forms">
+
+                <ng-container [ngSwitch]="formsItem.componenti[0]">
+
+                    <div *ngSwitchCase="'button'">
+                        <app-button [dati]="formsItem.contenuti[0].contenuto"
+                            (bottoneCliccato)="onBottoneClick($event)"></app-button>
+                    </div>
+
+                    <div *ngSwitchCase="'input'">
+                        <app-mat-input [inputDati]="formsItem.contenuti[0].contenuto"
+                            (formDataChanged)="updateFormData($event)"></app-mat-input>
+                    </div>
+
+                    <div *ngSwitchCase="'div'">
+                        <div>{{formsItem.nomi[0]}}</div>
+                    </div>
+
+                    <div *ngSwitchCase="'list'">
+                        <app-mat-list [field]="formsItem.contenuti[0].contenuto"
+                        (formDataChanged)="updateFormData($event)"></app-mat-list>
+                    </div>
+
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</fieldset>
+</body>

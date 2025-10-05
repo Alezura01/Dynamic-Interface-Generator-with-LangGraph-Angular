@@ -1,0 +1,56 @@
+<body>
+    <div class="center-container">
+        <div *ngIf="forms.length > 0" class="content">
+            <div class="form-title">{{formName}}</div>
+    
+            <div *ngIf="forms.length > 1">
+    
+                <ul class="progressbar" [style.--progress]="currentIndex" [style.--steps]="forms.length">
+                    <li *ngFor="let unit of forms; let ind = index" [class.active]="ind <= currentIndex"
+                        (click)="goBack(ind)" [class.clickable]="ind <= currentIndex"></li>
+                </ul>
+            </div>
+    
+            <div *ngFor="let c of forms[currentIndex].contenuti; let idx = index">
+
+                <ng-container [ngSwitch]="forms[currentIndex].componenti[idx]">
+
+                    <div *ngSwitchCase="'button'">
+                        <app-button [dati]="c.contenuto"
+                            (bottoneCliccato)="onBottoneClick($event)"
+                            [disabled]="!bottoneAbilitato"></app-button>
+                    </div>
+
+                    <div *ngSwitchCase="'input'">
+                        <app-mat-input [inputDati]="c.contenuto"
+                            (formDataChanged)="updateFormData($event)"
+                            (inputCompilato) = "onInputCompilato($event)"
+                            ></app-mat-input>
+                    </div>
+
+                    <div *ngSwitchCase="'fieldset'">
+                        <app-fieldset [fieldsetData]="c.contenuto"
+                            (bottoneCliccato)="onBottoneClick($event)" (formInviato)="formInviato.emit()"
+                            (datiAggiornati)="updateFormData($event)">
+                        </app-fieldset>
+                    </div>
+
+                    <div *ngSwitchCase="'div'">
+                        <div>{{c.contenuto.name}}</div>
+                    </div>
+
+                    <div *ngSwitchCase="'list'">
+                        <app-mat-list [field]="c.contenuto"
+                            (formDataChanged)="updateFormData($event)"></app-mat-list>
+                    </div>
+
+                </ng-container>
+
+            </div>
+            <div *ngIf="currentIndex === (forms.length - 1) && bottoneFinale">
+                <app-button [dati]="bottoneFinale" (bottoneCliccato)="onBottoneClick($event)" [disabled]="!bottoneAbilitato"></app-button>
+            </div>
+
+        </div>
+    </div>
+</body>

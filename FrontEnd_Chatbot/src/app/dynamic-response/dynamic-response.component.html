@@ -1,0 +1,43 @@
+<body>
+    <div class="center-container">
+
+        <div class="content">
+            <div class="result-choice" *ngFor="let componente of componenti; let idx = index">
+                <ng-container [ngSwitch]="componente">
+
+                    <div *ngSwitchCase="'div'">
+                        <div>{{nomi[idx]}}</div>
+                    </div>
+
+                    <div *ngSwitchCase="'table'">
+                        <app-mat-table [tabella]="contenuti[idx].contenuto"></app-mat-table>
+                    </div>
+
+                    <div *ngSwitchCase="'form'">
+                        <app-form [formData]="contenuti[idx].contenuto" [formName]="nomi[idx]"
+                            (bottoneCliccato)="onBottoneClick($event)"
+                            (datiAggiornati)="updateFormData($event)"></app-form>
+                    </div>
+
+                    <div *ngSwitchCase="'button'">
+                        <app-button [dati]="contenuti[idx].contenuto"
+                            (bottoneCliccato)="onBottoneClick($event)"></app-button>
+                    </div>
+
+                    <div *ngSwitchCase="'input'">
+                        <app-mat-input [inputDati]="contenuti[idx].contenuto"
+                            (formDataChanged)="updateFormData($event)"></app-mat-input>
+                    </div>
+
+                    <div *ngSwitchCase="'list'">
+                        <app-mat-list [field]="contenuti[idx].contenuto"></app-mat-list>
+                    </div>
+
+                </ng-container>
+                <div *ngIf="isLoading" class="spinner-overlay">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

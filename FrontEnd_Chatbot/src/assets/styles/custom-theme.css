@@ -1,0 +1,164 @@
+    body.app-root body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #c5281c;
+    }
+
+    body.app-root .center-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body.app-root .content {
+        background-color: #f8f9fa;
+        padding: 100px;
+        text-align: center;
+        font-size: 1.5rem;
+        color: #343a40;
+        border-radius: 8px;
+    }
+
+    body.app-root .input-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+    }
+
+    body.app-root .input-field {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 200px;
+        font-size: 16px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+    }
+
+    body.app-root .submit-button {
+        flex: 1;
+        background-color: #c5281c;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #d1d5db;
+        border-radius: 10px;
+        padding: 8px 16px;
+        margin: 8px;
+        font-size: 17px;
+        cursor: pointer;
+        transition: background-color .25s ease-in-out;
+    }
+
+    body.app-root .submit-button:hover {
+        background-color: #aa1e13;
+    }
+
+    body.app-dynamic-response body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #c5281c;
+    }
+
+    body.app-dynamic-response .center-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body.app-dynamic-response .content {
+        background-color: #f8f9fa;
+        padding: 100px;
+        text-align: center;
+        font-size: 1.5rem;
+        color: #343a40;
+        border-radius: 8px;
+    }
+
+    body.app-dynamic-response .input-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+    }
+
+    body.app-dynamic-response .input-field {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 200px;
+        font-size: 16px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    body.app-form body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #c5281c;
+    }
+
+    body.app-form .center-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body.app-form .content {
+        background-color: #f8f9fa;
+        text-align: center;
+        font-size: 1.5rem;
+        color: #343a40;
+        border-radius: 8px;
+    }
+
+
+    body.app-root .spinner {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #c5281c;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+    }
+
+    body.app-fieldset body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #c5281c;
+    }
+
+    body.app-fieldset .center-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body.app-dynamic-response .spinner {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #c5281c;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+    }
+
+    
+
+
+
+
+

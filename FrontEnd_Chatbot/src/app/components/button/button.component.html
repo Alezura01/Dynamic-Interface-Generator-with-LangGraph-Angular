@@ -1,0 +1,8 @@
+<section>
+  <div *ngFor="let btn of buttonData">
+    <div class="example-button-row">
+      <button mat-flat-button class="personal-button" [id]="btn.id" (click)="onClick(btn.id)"
+       >{{btn.name}}</button>
+    </div>
+  </div>
+</section>

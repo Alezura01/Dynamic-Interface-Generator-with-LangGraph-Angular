@@ -1,0 +1,16 @@
+<body>
+  <div class="center-container">
+
+    <div class="content">
+      <p>Quale preventivo vuoi fare?</p>
+      <div class="input-group">
+        <input class="input-field" type="text" [(ngModel)]="prompt" (keyup.enter)="onSave2()"
+          placeholder="Scrivi qui...">
+        <div class="submit-button" (click)="onSave2()">Invia</div>
+      </div>
+      <div *ngIf="isLoading" class="spinner-overlay">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </div>
+</body>

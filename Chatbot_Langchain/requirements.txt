@@ -1,0 +1,11 @@
+fastapi
+langchain
+langchain-openai
+dotenv
+uvicorn
+langchain-community
+langgraph
+langgraph-supervisor
+IPython
+langgraph-api
+agentevals

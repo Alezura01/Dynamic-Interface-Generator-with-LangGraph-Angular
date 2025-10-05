@@ -1,0 +1,38 @@
+<div *ngFor="let i of getIndexes(labels.length)">
+  <div [ngSwitch]="types[i]">
+
+    <!-- Input form solo per password -->
+    <div *ngSwitchCase="'password'">
+      <mat-form-field>
+        <mat-label>{{labels[i]}}</mat-label>
+        <input matInput [type]="hide() ? 'password' : 'text'" [(ngModel)]="formData[labels[i]]" name="labels[i]"
+          (ngModelChange)="onInputChange(labels[i], $event, id[i])" />
+        <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide()">
+          <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div *ngSwitchCase="'email'">
+      <mat-form-field>
+        <mat-label>{{labels[i]}}</mat-label>
+        <input matInput [(ngModel)]="formData[labels[i]]" name="labels[i]" placeholder="abc@example.com"
+          required (ngModelChange)="onInputChange(labels[i], $event, id[i])">
+        @if (email.invalid) {
+        <mat-error>{{errorMessage()}}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <!-- Input form di tipo testo-->
+    <div *ngSwitchDefault>
+      <mat-form-field>
+        <mat-label>{{labels[i]}}</mat-label>
+        <input matInput [type]="types[i]" [(ngModel)]="formData[labels[i]]" name="labels[i]"
+          (ngModelChange)="onInputChange(labels[i], $event, id[i])"
+          [required]="required[i]">
+      </mat-form-field>
+    </div>
+  </div>
+</div>

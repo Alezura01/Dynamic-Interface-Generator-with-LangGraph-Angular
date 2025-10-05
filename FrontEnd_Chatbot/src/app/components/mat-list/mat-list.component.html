@@ -1,0 +1,35 @@
+<ng-container *ngFor="let i of getIndexes(values.length)">
+  <ng-container [ngSwitch]="types[i]">
+
+    <ng-container *ngSwitchCase="'list'">
+      <mat-list role="list">
+        <div>{{name}}</div>
+        <div *ngFor="let val of values">
+          <mat-list-item role="listitem" name="name[i]">{{val}}</mat-list-item>
+        </div>
+      </mat-list>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'linea'">
+      <mat-radio-group [(ngModel)]="formData[name[0]]" (ngModelChange)="onListChange(name[0], $event)">
+        <div>{{name}}</div>
+        <div *ngFor="let val of values">
+          <mat-radio-button value="{{val}}">{{val}}</mat-radio-button>
+        </div>
+      </mat-radio-group>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'tendina'">
+      <mat-form-field>
+        <mat-label>{{name}}</mat-label>
+        <mat-select [(ngModel)]="formData[name[0]]" (ngModelChange)="onListChange(name[0], $event)"
+        [required]="required[i]">
+          <div *ngFor="let val of values">
+            <mat-option value="{{val}}">{{val}}</mat-option>
+          </div>
+        </mat-select>
+      </mat-form-field>
+    </ng-container>
+    
+  </ng-container>
+</ng-container>
