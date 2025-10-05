@@ -5,6 +5,7 @@
 This project consists of a multi-agent system that, through the work of its agents, generates insurance quotes based on user input. <br>
 The architecture is represented in the following picture.
 
+![Architecture of the system](https://github.com/Alezura01/Dynamic-Interface-Generator-with-LangGraph-Angular/blob/main/Architettura.png?raw=true)
 
 At the moment, the project supports two types of quotes: **car** and **home**.
 
